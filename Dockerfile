@@ -1,6 +1,7 @@
 From alpine:3.10
 
 ARG KUBECTL_VERSION=v1.18.12
+ARG TARGETPLATFORM=linux/amd64
 
 RUN apk update && apk add \
    bash \
