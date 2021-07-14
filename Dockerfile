@@ -20,6 +20,10 @@ RUN apk update && apk add \
    mv ./kubectl /usr/local/bin/kubectl && \
    echo -e 'source /usr/share/bash-completion/bash_completion\nsource <(kubectl completion bash)' >>~/.bashrc
 
+
+From alpine:3.11
+
+COPY --from=0 /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
